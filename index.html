@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div id="animate" class="fa"></div>
+      <p id="desc">hghh</p>
+    </div>
+
+    <script>
+      const batteryAnimate = () => {
+        const mainContainer = document.querySelector(".main-container");
+        const animate = document.querySelector("#animate");
+        const desc = document.querySelector("#desc");
+
+        mainContainer.style.display = "flex";
+        mainContainer.style.flexDirection = "column";
+        mainContainer.style.alignItems = "center";
+        mainContainer.style.justifyContent = "center";
+
+        desc.style.fontSize = "50px";
+
+        animate.innerHTML = "&#xf244;";
+        animate.style.color = "red";
+        animate.style.fontSize = "100px";
+        desc.textContent = "0%";
+        desc.style.color = "red";
+
+        setTimeout(() => {
+          animate.innerHTML = "&#xf243;";
+          animate.style.color = "darkorange";
+          desc.textContent = "25%";
+          desc.style.color = "darkorange";
+        }, 500);
+
+        setTimeout(() => {
+          animate.innerHTML = "&#xf242;";
+          animate.style.color = "orange";
+          desc.textContent = "50%";
+          desc.style.color = "orange";
+        }, 1000);
+        setTimeout(() => {
+          animate.innerHTML = "&#xf241;";
+          animate.style.color = "greenyellow";
+          desc.textContent = "75%";
+          desc.style.color = "greenyellow";
+        }, 1500);
+        setTimeout(() => {
+          animate.innerHTML = "&#xf240;";
+          animate.style.color = "forestgreen";
+          desc.textContent = "100%";
+          desc.style.color = "forestgreen";
+        }, 2000);
+      };
+      batteryAnimate();
+      setInterval(batteryAnimate, 2500);
+    </script>
+  </body>
+</html>
